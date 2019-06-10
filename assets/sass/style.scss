@@ -1,0 +1,29 @@
+/*!
+	Theme Name: Steininger Starter THeme
+	Theme URI: TBD
+
+	Description: A Genesis-powered Starter Child Theme for my own use
+	Author: Steininger
+	Author URI: tbd
+
+	Version: 1.0.1
+
+	Tags: black, red, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+
+	Template: genesis
+	Template Version: 2.2.3
+
+	License: GPL-2.0+
+	License URI: http://www.opensource.org/licenses/gpl-license.php
+	Text Domain: developers
+*/
+@import 'bourbon';
+@import 'neat';
+@import '../../node_modules/sass-rem/rem';
+
+@import 'utilities/index';
+@import 'base/index';
+@import 'layouts/index';
+@import 'components/index';
+@import 'plugins/index';
+@import 'views/index';

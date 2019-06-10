@@ -1,0 +1,12 @@
+/* ## Primary Navigation
+--------------------------------------------- */
+
+.nav-primary {
+  background-color: $primary-nav--background-color;
+  border-top: 1px solid $primary-nav--border-color;
+}
+#genesis-nav-primary{
+  @media only screen and (min-width: $screen-size--medium) {
+    display:none;
+  }
+}
