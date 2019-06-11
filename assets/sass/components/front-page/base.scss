@@ -1,0 +1,40 @@
+//
+// Front Page Module
+//=========================
+
+.front-page-inner-container{
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.short-bio-box {
+  padding: 10px;
+  margin: 10px;
+  border: black solid 1px;
+}
+
+.bio-box__image{
+  border-radius: 50%;
+  width: 25%;
+}
+
+.bio-box__header{
+  display: flex;
+  align-items: center;
+}
+
+.bio-box__h1{
+  margin-left: 10px;
+}
+
+.quote-box{
+  background-color: $gray--light;
+  padding: 10px;
+  margin: 10px;
+  border-left: $periwinkle solid 8px;
+}
+
+#quote-author__name{
+  margin-left: 20px;
+}
