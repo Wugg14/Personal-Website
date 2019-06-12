@@ -6,6 +6,11 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  overflow: auto;
+}
+
+.about-me{
+  margin-bottom: 25px;
 }
 
 .short-bio-box {
@@ -37,4 +42,34 @@
 
 #quote-author__name{
   margin-left: 20px;
+}
+
+.featured-projects{
+  background-color: #ccccff;
+  overflow: auto;
+  clear: both;
+  padding-top:25px;
+  padding-bottom: 25px;
+}
+
+.blog-preview{
+  padding: 15px;
+  border: black 1px solid;
+}
+
+.blog-preview__thumbnail{
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+    width: 200px;
+  }
+}
+
+.blog-preview__thumbnail-container{
+  background-color: $periwinkle;
+}
+
+.blog-preview__header__post-date{
+  color: $gray--medium;
 }
