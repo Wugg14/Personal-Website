@@ -29,5 +29,6 @@ function enqueue_assets(){
         'subMenu' => __('Menu', CHILD_TEXT_DOMAIN),
     );
     wp_localize_script(CHILD_TEXT_DOMAIN . '-responsive-menu', 'developersL10n', $localized_script_args);
+    wp_enqueue_style( CHILD_TEXT_DOMAIN . '-FontAwesome', '//use.fontawesome.com/releases/v5.11.1/css/all.css', CHILD_THEME_VERSION);
 
 }

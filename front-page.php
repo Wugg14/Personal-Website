@@ -72,10 +72,58 @@ function featured_projects(){
         <div class="front-page-inner-container">
             <h1>Featured Projects</h1>
             <div class="first one-half">
-                <img src="https://i.redd.it/mfn69vdxgq331.jpg" />
+               <div class="featured-projects__container">
+                   <h2>American Promise Custom Wordpress Theme</h2>
+                   <hr />
+                   <div class="featured-projects__inner-container">
+                       <div class="featured-projects__inner-thumbnail first one-half">
+                           <img src="http://marks-portfolio.local/wp-content/uploads/2019/09/APLogoColorOptimized.jpg">
+                       </div>
+                        <div class="featured-projects__inner-thumbnail one-half">
+                            A custom Wordpress Theme I created for my employer American Promise. It is built with Genesis and based on the Genesis Starter Theme from <a href="https://knowthecode.io/">Know The Code</a>.
+                        </div>
+                       <hr />
+                       <div class="featured-projects__links">
+                           <div class="first one-half">
+                               <div class="inner-link">
+                                   <i class="fas fa-address-book"></i>
+                               </div>
+                           </div>
+                           <div class="one-half">
+                               <div class="inner-link">
+                                <i class="fas fa-link"></i>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
             </div>
             <div class="one-half">
-                <img src="https://i.redd.it/czusywvfjv331.jpg"/>
+                <div class="featured-projects__container">
+                    <h2>American Promise Custom Wordpress Theme</h2>
+                    <hr />
+                    <div class="featured-projects__inner-container">
+                        <div class="featured-projects__inner-thumbnail first one-half">
+                            <img src="http://marks-portfolio.local/wp-content/uploads/2019/09/APLogoColorOptimized.jpg">
+                        </div>
+                        <div class="featured-projects__inner-thumbnail one-half">
+                            A custom Wordpress Theme I created for my employer American Promise. It is built with Genesis and based on the Genesis Starter Theme from <a href="https://knowthecode.io/">Know The Code</a>.
+                        </div>
+                        <hr />
+                        <div class="featured-projects__links">
+                            <div class="first one-half">
+                                <div class="inner-link">
+                                    <i class="fas fa-address-book"></i>
+                                </div>
+                            </div>
+                            <div class="one-half">
+                                <div class="inner-link">
+                                    <i class="fas fa-link"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

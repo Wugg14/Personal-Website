@@ -9,7 +9,7 @@
 * @license		GNU General Public License 2.0+
 */
 namespace MarkSteininger\Developers;
-
+add_action( 'init', __NAMESPACE__ . '\custom_post_type_init' );
 add_action( 'genesis_setup', __NAMESPACE__ . '\setup_child_theme', 15 );
 /**
  * Setup child theme.
@@ -146,3 +146,43 @@ function get_theme_settings_defaults() {
         'site_layout'               => 'content-sidebar',
     );
 }
+
+/**
+ * Adds custom post types to theme
+ *
+ * @since 1.0.0
+ *
+ */
+function custom_post_type_init(){
+    $labels = array(
+        'name'               => 'Portfolio Projects',
+        'singular_name'      => 'Projects',
+        'add_new'            => 'Add New',
+        'add_new_item'       => 'Add New Project',
+        'edit_item'          => 'Edit Project',
+        'new_item'           => 'New Project',
+        'view_item'          => 'View Project',
+        'search_items'       => 'Search Project',
+        'not_found'          => 'No Project found',
+        'not_found_in_trash' => 'No Project found in Trash',
+        'menu_name'          => 'Portfolio Projects',
+    );
+    $args = array(
+        'labels'              => $labels,
+        'hierarchical'        => false,
+        'supports'            => array( 'title', 'editor', 'thumbnail' ),
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_rest'        => true,
+        'publicly_queryable'  => true,
+        'exclude_from_search' => false,
+        'has_archive'         => true,
+        'query_var'           => true,
+        'can_export'          => true,
+        'rewrite'             => array( 'slug' => 'testimonials', 'with_front' => false ),
+        'menu_icon'           => 'dashicons-media-code', // https://developer.wordpress.org/resource/dashicons/
+    );
+    register_post_type( 'Portfolio Projects', $args );
+};

@@ -52,6 +52,34 @@
   padding-bottom: 25px;
 }
 
+.featured-projects__container{
+  padding: 15px;
+  border: solid black 1px;
+
+  a{
+    &:hover{
+      color: #333333;
+    }
+  }
+}
+
+.featured-projects__links{
+  margin-bottom: 75px;
+
+  i {
+    font-size: 2.5em;
+
+    &:hover{
+      color: white;
+    }
+  }
+}
+
+.inner-link{
+  display: flex;
+  justify-content: center;
+}
+
 .blog-preview{
   padding: 15px;
   border: black 1px solid;
