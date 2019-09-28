@@ -181,8 +181,8 @@ function custom_post_type_init(){
         'has_archive'         => true,
         'query_var'           => true,
         'can_export'          => true,
-        'rewrite'             => array( 'slug' => 'testimonials', 'with_front' => false ),
+        'rewrite'             => array( 'slug' => 'projects'),
         'menu_icon'           => 'dashicons-media-code', // https://developer.wordpress.org/resource/dashicons/
     );
-    register_post_type( 'Portfolio Projects', $args );
+    register_post_type( 'projects', $args );
 };

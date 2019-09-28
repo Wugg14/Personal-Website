@@ -5,7 +5,7 @@
  * @package  	MarkSteininger\Developers
  * @since		1.0.0
  * @author		MarkSteininger
- * @link			tbd
+ * @link		tbd
  * @license		GNU General Public License 2.0+
  */
 namespace MarkSteininger\Developers;
@@ -71,63 +71,67 @@ function featured_projects(){
     <div class="featured-projects">
         <div class="front-page-inner-container">
             <h1>Featured Projects</h1>
-            <div class="first one-half">
-               <div class="featured-projects__container">
-                   <h2>American Promise Custom Wordpress Theme</h2>
-                   <hr />
-                   <div class="featured-projects__inner-container">
-                       <div class="featured-projects__inner-thumbnail first one-half">
-                           <img src="http://marks-portfolio.local/wp-content/uploads/2019/09/APLogoColorOptimized.jpg">
-                       </div>
-                        <div class="featured-projects__inner-thumbnail one-half">
-                            A custom Wordpress Theme I created for my employer American Promise. It is built with Genesis and based on the Genesis Starter Theme from <a href="https://knowthecode.io/">Know The Code</a>.
-                        </div>
-                       <hr />
-                       <div class="featured-projects__links">
-                           <div class="first one-half">
-                               <div class="inner-link">
-                                   <i class="fas fa-address-book"></i>
-                               </div>
-                           </div>
-                           <div class="one-half">
-                               <div class="inner-link">
-                                <i class="fas fa-link"></i>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-            </div>
-            <div class="one-half">
-                <div class="featured-projects__container">
-                    <h2>American Promise Custom Wordpress Theme</h2>
-                    <hr />
-                    <div class="featured-projects__inner-container">
-                        <div class="featured-projects__inner-thumbnail first one-half">
-                            <img src="http://marks-portfolio.local/wp-content/uploads/2019/09/APLogoColorOptimized.jpg">
-                        </div>
-                        <div class="featured-projects__inner-thumbnail one-half">
-                            A custom Wordpress Theme I created for my employer American Promise. It is built with Genesis and based on the Genesis Starter Theme from <a href="https://knowthecode.io/">Know The Code</a>.
-                        </div>
+            <?php
+            $counter = 0;
+            $args = array(
+                'post_type' => 'projects',
+                'posts_per_page' => 2
+            );
+            $featuredProjects = new \WP_Query($args);
+
+            while ($featuredProjects->have_posts()) {
+                $featuredProjects->the_post();
+
+                //first project
+                if($counter == 0 ){
+                    ?>
+                    <div class="first one-half">
+                    <?php
+                //second project
+                } else {
+                    ?>
+                    <div class="one-half">
+                    <?php
+                }
+                //no changes to this section
+                ?>
+                    <div class="featured-projects__container">
+                        <h2><?php the_title(); ?></h2>
                         <hr />
-                        <div class="featured-projects__links">
-                            <div class="first one-half">
-                                <div class="inner-link">
-                                    <i class="fas fa-address-book"></i>
-                                </div>
+                        <div class="featured-projects__inner-container">
+                            <div class="featured-projects__inner-thumbnail first one-half">
+                                <img alt="project-thumbnail" src="<?php the_post_thumbnail_url('medium'); ?>" />
                             </div>
                             <div class="one-half">
-                                <div class="inner-link">
-                                    <i class="fas fa-link"></i>
+                               <?php echo get_the_content() ?>
+                            </div>
+                            <hr />
+                            <div class="featured-projects__links">
+                                <div class="first one-half">
+                                    <div class="inner-link">
+                                        <a href="<?php echo get_field("github_url"); ?>">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="one-half">
+                                    <div class="inner-link">
+                                        <a href="<?php echo get_field("live_link"); ?>">
+                                            <i class="fas fa-link"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <?php
+                $counter+= 1;
+            }
+            ?>
             </div>
         </div>
-    </div>
-<?php
+    <?php
 };
 
 function open_ended_section(){
@@ -136,19 +140,44 @@ function open_ended_section(){
         <div class="first two-thirds">
             <h1>Latest from My Blog:</h1>
             <div class="blog-preview">
-                <div class="blog-preview__thumbnail-container">
-                    <div class="blog-preview__thumbnail"><img src="https://i.redd.it/1tt0rq6yxy331.png"/></div>
-                </div>
-                <hr />
+                <?php
+                $args = array(
+                'posts_per_page' => 1,
+            );
+            $blogpost = new \WP_Query($args);
+            while ($blogpost -> have_posts()) {
+                $blogpost->the_post();
+
+                //check for thumbnail
+                if(has_post_thumbnail()){
+                    ?>
+                    <div class="blog-preview__thumbnail-container">
+                        <div class="blog-preview__thumbnail"><img src="<?php the_post_thumbnail_url('medium'); ?>"/></div>
+                    </div>
+                    <hr />
+                    <?php
+                }
+                ?>
                 <div class="blog-preview__header">
-                    <h1>Game of Thrones is Bad, Don't @ Me <span class="blog-preview__header__post-date">| May 29th, 2019</span></h1>
+                    <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a><span class="blog-preview__header__post-date">| <?php echo get_the_date('F j, Y'); ?></span></h1>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis volutpat elit. Nam non rhoncus mauris. Proin non lacus non neque convallis iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam lacinia a est non cursus. Suspendisse in leo purus. Maecenas elementum, ex ac porttitor commodo, magna sapien vestibulum quam, id vehicula felis risus ac tellus.</p>
-                <button>Read More</button>
+
+                <?php if (has_excerpt()) {
+                    echo get_the_excerpt();
+                } else {
+                    echo wp_trim_words(get_the_content(), 36);
+                }
+                ?>
+                <br />
+                <br />
+                <form action="<?php the_permalink(); ?>"><button>Read More</button></form>
             </div>
+            <?php
+            }
+            ?>
         </div>
-        <div class="one-third">
-            <h1>Bangers of the Month</h1>
+        <div class="open-ended-section--small one-third">
+            <h1>Current Jams</h1>
             <iframe src="https://open.spotify.com/embed/playlist/6UPB3v3OZlfwx4FKJETNWm" width="400" height="500" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
     </div>

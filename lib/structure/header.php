@@ -19,10 +19,10 @@ function unregister_header_callbacks() {
 function mysite_header(){ ?>
     <div class="navigation-banner">
         <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/#')); ?>">About</a></div></div>
-        <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/#')); ?>">Portfolio</a></div></div>
-        <div class="navigation-banner_logo"><img src="<?php echo get_theme_file_uri('/assets/images/logo.png') ?>"/></div>
-        <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/#')); ?>">Blog</a></div></div>
-        <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/#')); ?>">Contact Me</a></div></div>
+        <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/projects/')); ?>">Portfolio</a></div></div>
+        <div class="navigation-banner_logo"><a href="<?php echo esc_url(site_url('/')); ?>"><img src="<?php echo get_theme_file_uri('/assets/images/logo.png') ?>"/></a></div>
+        <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/blog')); ?>">Blog</a></div></div>
+        <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/#')); ?>">Contact</a></div></div>
     </div>
     <?php
 }
