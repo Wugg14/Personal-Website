@@ -5,7 +5,7 @@
 * @package  	MarkSteininger\Developers
 * @since		1.0.0
 * @author		MarkSteininger
-* @link			tbdx
+* @link			marksteininger.com
 * @license		GNU General Public License 2.0+
 */
 namespace MarkSteininger\Developers;
@@ -18,11 +18,11 @@ function unregister_header_callbacks() {
 
 function mysite_header(){ ?>
     <div class="navigation-banner">
-        <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/#')); ?>">About</a></div></div>
+        <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/about')); ?>">About</a></div></div>
         <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/projects/')); ?>">Portfolio</a></div></div>
         <div class="navigation-banner_logo"><a href="<?php echo esc_url(site_url('/')); ?>"><img src="<?php echo get_theme_file_uri('/assets/images/logo.png') ?>"/></a></div>
         <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/blog')); ?>">Blog</a></div></div>
-        <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/#')); ?>">Contact</a></div></div>
+        <div class="navigation-banner__link"><div class="navigation-banner__link-inner"><a href="<?php echo esc_url(site_url('/contact')); ?>">Contact</a></div></div>
     </div>
     <?php
 }
