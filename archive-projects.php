@@ -52,10 +52,10 @@ function custom_projects_loop(){
             <h2><?php the_title(); ?></h2>
             <hr/>
             <div class="featured-projects__inner-container">
-                <div class="featured-projects__inner-thumbnail first one-half">
+                <div class="featured-projects__inner-thumbnail first one-third">
                     <img alt="project-thumbnail" src="<?php the_post_thumbnail_url('medium'); ?>"/>
                 </div>
-                <div class="one-half">
+                <div class="two-thirds">
                     <?php echo get_the_content() ?>
                 </div>
                 <hr/>

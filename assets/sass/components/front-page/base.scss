@@ -76,7 +76,7 @@
     font-size: 2.5em;
 
     &:hover{
-      color: white;
+      color: $periwinkle;
     }
   }
 }
@@ -117,4 +117,8 @@
 
 .open-ended-section--small{
   text-align: center;
+
+  h1{
+    text-align: left;
+  }
 }
