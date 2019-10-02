@@ -37,6 +37,14 @@ function custom_front_page_loop () {
     open_ended_section();
 };
 
+
+/**
+ * The About Me Section Content
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
 function about_me_section(){
 ?>
     <div class="about-me front-page-inner-container">
@@ -66,6 +74,14 @@ function about_me_section(){
 <?php
 };
 
+
+/**
+ * The Featured Projects Content
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
 function featured_projects(){
     ?>
     <div class="featured-projects">
@@ -136,6 +152,14 @@ function featured_projects(){
     <?php
 };
 
+
+/**
+ * An Open Ended Section with Blog Content
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
 function open_ended_section(){
     ?>
     <div class="open-ended__section front-page-inner-container">

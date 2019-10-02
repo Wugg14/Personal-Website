@@ -38,7 +38,7 @@ function blog_loop(){
     while ($blogposts->have_posts()) {
         $blogposts->the_post();
 
-        //determining if it is an odd or even post
+        //determining if it is an odd or even post for formatting
         if ($counter % 2 == 0) {
             ?>
             <div class="first one-half blog-preview">
