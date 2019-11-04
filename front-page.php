@@ -126,20 +126,34 @@ function featured_projects(){
                             </div>
                             <hr />
                             <div class="featured-projects__links">
-                                <div class="first one-half">
+                            <?php
+                                if (get_field("live_link") != ''){
+                                    ?>
+                                    <div class="first one-half">
+                                        <div class="inner-link">
+                                            <a href="<?php echo get_field("github_url"); ?>">
+                                                <i class="fab fa-github"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="one-half">
+                                        <div class="inner-link">
+                                            <a href="<?php echo get_field("live_link"); ?>">
+                                                <i class="fas fa-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                 <?php
+                                } else {
+                                    ?>
                                     <div class="inner-link">
                                         <a href="<?php echo get_field("github_url"); ?>">
                                             <i class="fab fa-github"></i>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="one-half">
-                                    <div class="inner-link">
-                                        <a href="<?php echo get_field("live_link"); ?>">
-                                            <i class="fas fa-link"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                                    <?php
+                                }
+                            ?>
                             </div>
                         </div>
                     </div>
