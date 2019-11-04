@@ -91,7 +91,8 @@ function featured_projects(){
             $counter = 0;
             $args = array(
                 'post_type' => 'projects',
-                'posts_per_page' => 2
+                'posts_per_page' => 2,
+                'orderby' => 'menu_order'
             );
             $featuredProjects = new \WP_Query($args);
 
