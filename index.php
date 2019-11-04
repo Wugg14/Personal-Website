@@ -26,7 +26,7 @@ remove_action( 'genesis_before_loop', 'genesis_do_posts_page_heading' );
  * @return void
  */
 function blog_loop(){
-    ?> <h1>Blog Posts:</h1> <?php
+    ?> <h1>Blog Posts:</h1><hr /> <?php
     //init counter
     $counter = 0;
     //args for WP Query
